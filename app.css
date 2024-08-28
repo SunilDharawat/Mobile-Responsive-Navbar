@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-style: "Rubik", sans-serif;
+}
+body {
+  background-color: black;
+}
+nav {
+  height: 70px;
+  background-color: rgb(255, 255, 255);
+  color: #000;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+nav .menu i {
+  display: none;
+}
+.nav-items{
+  display: flex;
+}
+.overview-links, .account-links{
+  display: flex;
+  gap: 10px;
+}
+.overview-links{
+  margin-right: 4rem;
+}
+.overview-links li a, .account-links li a {
+  padding: 20px;
+}
+.logo a, nav a{
+  text-decoration: none;
+  color: rgb(0, 78, 95);
+}
+nav li {
+  list-style: none;
+}
+nav a::after{
+  content: "";
+  display: block;
+  height: 3px;
+  background: #a0ebfd;
+  width: 0%;
+  transition: all ease-in-out 300ms;
+}
+nav a:hover::after{
+  width: 100%;
+}
+/* hide icons, checkbox */
+#check,.menu, .nav-items h3 {
+  display: none;
+}
+nav .overview-links li a i, nav .account-links li a i {
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: top;
+  margin-right: 10px;
+}
+nav li {
+  margin: 1rem 0;
+}
+nav a {
+  display: inline-block;
+}
+nav a:hover {
+  margin-left: 2px;
+  transition: all ease-in-out 300ms;
+}
+.menu {
+  display: inline-block;
+  position: fixed;
+  right: 2.5rem;
+  z-index: 99;
+}
+#check:checked ~ .nav-items {
+  right: 0;
+}
+
+/* Header Img */
+.header-img {
+  height: 100vh;
+  background: url(assets/programming-3170992_1920.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+  .nav-items{
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 80vh;
+    width: 200px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: rgb(20, 20, 20);
+    color: #fff;
+    padding: 2rem;
+    transition: all ease-in-out 500ms;
+    border-radius: 20px 0  0 20px;
+  }  
+  .overview-links, .account-links{
+    flex-direction: column;
+    width: auto;
+  }
+  .overview-links{
+    margin: 0;
+  }
+  .nav-items h3 {
+    display: inline-block;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 1rem;
+  }
+  nav .menu i {
+    display: inline-block;
+    color: #0e5061;
+    cursor: pointer;
+  }
+  .overview-links li a, .account-links li a {
+    padding: 0;
+  }
+}
